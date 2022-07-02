@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Bukufy_Admin/1.0.0": {
+        "runtime": {
+          "Bukufy_Admin.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Bukufy_Admin/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

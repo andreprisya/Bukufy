@@ -1,0 +1,172 @@
+﻿<Window x:Class="Bukufy_Admin.Halaman_Detail_Buku"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bukufy_Admin"
+        mc:Ignorable="d"
+        Title="Bukufy: Detail Buku" 
+        WindowState="Maximized"
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}" 
+        Width="{x:Static SystemParameters.PrimaryScreenWidth}">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}" x:Key="textBoxStyle">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="MinHeight" Value="52"/>
+            <Setter Property="Foreground" Value="#555353"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        <Border Background="#D9D9D9" CornerRadius="6" Padding="15,5,15,5">
+                            <ScrollViewer Margin="0" x:Name="PART_ContentHost" 
+                                          VerticalAlignment="Center" Grid.Column="0" 
+                                          HorizontalAlignment="Left"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ControlTemplate x:Key="buttonPrimaryStyle" TargetType="{x:Type Button}">
+            <Grid>
+                <Border Background="#FFA26D" CornerRadius="12"/>
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Height" Value="Auto">
+                    <Setter Property="MinHeight" Value="52"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="buttonSecondaryStyle" TargetType="{x:Type Button}">
+            <Grid>
+                <Border BorderThickness="2" BorderBrush="#FFA26D" CornerRadius="12"/>
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Height" Value="Auto">
+                    <Setter Property="MinHeight" Value="52"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image Source="/Bukufy_Admin;component/assets/logo/Logo Bukufy Kesamping.png" 
+                   Width="250" VerticalAlignment="Center"/>
+                <Border CornerRadius="6" Background="#D9D9D9" VerticalAlignment="Center" Width="450" Margin="25,0,50,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="9*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="/Bukufy_Admin;component/assets/icons/magnifying-glass.png" Width="15"/>
+                        <TextBox Grid.Column="1" Style="{StaticResource textBoxStyle}"
+                             Text="Cari Buku, Judul Buku, Penulis"/>
+                    </Grid>
+                </Border>
+                <StackPanel VerticalAlignment="Center" Margin="0,0" Orientation="Horizontal">
+                    <TextBlock Text="PRODUK" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    <TextBlock Text="TRANSAKSI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    <TextBlock Text="EKSPEDISI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    <TextBlock Text="PENERBIT" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" Margin="50,0,50,0">
+                    <Image Source="/Bukufy_Admin;component/assets/icons/profile.png" Width="40"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Margin="150,0,150,100">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,25">
+                        <Image Source="/Bukufy_Admin;component/assets/icons/back-button.png" Width="30"
+                           VerticalAlignment="Center" Margin="0,0,15,0"/>
+                        <TextBlock Text="Kembali" Foreground="#FFA26D" FontSize="22"
+                               FontFamily="{StaticResource Poppins}"
+                               VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock Text="Detail Buku" FontSize="36" FontFamily="{StaticResource PoppinsSemi}"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Column="0" Grid.Row="0"/>
+                        <StackPanel Grid.Column="1" Grid.Row="0">
+                            <TextBlock Text="Sebuah Seni Untuk Bersikap Bodo Amat"
+                                       FontSize="30" FontFamily="{StaticResource PoppinsSemi}"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="4*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Judul" Grid.Column="0" Grid.Row="0"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Text="Penulis" Grid.Column="0" Grid.Row="1"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Text="Penerbit" Grid.Column="0" Grid.Row="2"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Text="Harga" Grid.Column="0" Grid.Row="3"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Text="Stok" Grid.Column="0" Grid.Row="4"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                
+                                <TextBlock Text=":" Grid.Column="1" Grid.Row="0"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Text=":" Grid.Column="1" Grid.Row="1"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Text=":" Grid.Column="1" Grid.Row="2"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Text=":" Grid.Column="1" Grid.Row="3"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Text=":" Grid.Column="1" Grid.Row="4"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+
+                                <TextBlock Text="Sebuah Seni Untuk Bersikap Bodo Amat" 
+                                           Grid.Column="2" Grid.Row="0" Margin="15,0,0,0"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Text="Mark Manson" Grid.Column="2" Grid.Row="1" Margin="15,0,0,0"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Text="PT. Andre &amp; Egy" Grid.Column="2" Grid.Row="2" Margin="15,0,0,0"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Text="Rp. 80.999" Grid.Column="2" Grid.Row="3" Margin="15,0,0,0"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Text="99" Grid.Column="2" Grid.Row="4" Margin="15,0,0,0"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                            </Grid>
+                            <StackPanel Margin="0,25,0,0">
+                                <Button Content="Ubah Data" Template="{StaticResource buttonPrimaryStyle}"
+                                        Margin="0,10" Foreground="#ffffff" FontSize="20"
+                                        FontFamily="{StaticResource Poppins}"/>
+                                <Button Content="Ubah Data" Template="{StaticResource buttonSecondaryStyle}"
+                                        Margin="0,10" Foreground="#FFA26D" FontSize="20"
+                                        FontFamily="{StaticResource Poppins}"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                            <TextBlock Text="Deskripsi Buku" FontFamily="{StaticResource PoppinsSemi}" FontSize="30"/>
+                            <TextBlock Text="Dalam buku pengembangan diri yang mewakili generasi ini, seorang bloger superstar menunjukkan pada kita bahwa kunci untuk menjadi orang yang lebih kuat, lebih bahagia adalah dengan mengerjakan segala tantangan dengan lebih baik dan berhenti memaksa diri untuk menjadi positif di setiap saat. Selama beberapa tahun belakangan, Mark Manson-melalui blognya yang sangat populer-telah membantu mengoreksi harapan-harapan delusional kita, baik mengenai diri kita sendiri maupun dunia. Ia kini menuangkan buah pikirnya yang keren itu di dalam buku hebat ini. Manson melontarkan argumen bahwa manusia tak sempurna dan terbatas. Begini tulisnya, 'tidak semua orang bisa menjadi luar biasa-ada para pemenang dan pecundang di masyarakat, dan beberapa di antaranya tidak adil dan bukan akibat kesalahan Anda.' Manson mengajak kita untuk mengerti batasan-batasan."
+                                       TextWrapping="Wrap" FontFamily="{StaticResource Poppins}" FontSize="18"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>
