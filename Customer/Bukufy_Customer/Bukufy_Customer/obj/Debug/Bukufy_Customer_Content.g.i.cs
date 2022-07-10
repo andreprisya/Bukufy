@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/logo/purple%20elegant%20and%20modern%20book%20store%20logo%20design%20(500" +
-    "%20%c3%97%20250%20px)%20(1).png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/icons/account.png")]
 
 

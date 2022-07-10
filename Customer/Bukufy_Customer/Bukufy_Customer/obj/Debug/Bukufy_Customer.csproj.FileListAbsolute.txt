@@ -49,3 +49,9 @@ D:\Bukufy\Customer\Bukufy_Customer\Bukufy_Customer\obj\Debug\Message.baml
 D:\Bukufy\Customer\Bukufy_Customer\Bukufy_Customer\obj\Debug\Halaman_Register.g.cs
 D:\Bukufy\Customer\Bukufy_Customer\Bukufy_Customer\obj\Debug\Halaman_Register.baml
 D:\Bukufy\Customer\Bukufy_Customer\Bukufy_Customer\obj\Debug\Bukufy_Customer.csproj.AssemblyReference.cache
+D:\Bukufy\Customer\Bukufy_Customer\Bukufy_Customer\obj\Debug\Profil.g.cs
+D:\Bukufy\Customer\Bukufy_Customer\Bukufy_Customer\obj\Debug\Profil.baml
+D:\Bukufy\Customer\Bukufy_Customer\Bukufy_Customer\obj\Debug\Profil1.g.cs
+D:\Bukufy\Customer\Bukufy_Customer\Bukufy_Customer\obj\Debug\Profil1.baml
+D:\Bukufy\Customer\Bukufy_Customer\Bukufy_Customer\obj\Debug\Halaman_Profil.g.cs
+D:\Bukufy\Customer\Bukufy_Customer\Bukufy_Customer\obj\Debug\Halaman_Profil.baml

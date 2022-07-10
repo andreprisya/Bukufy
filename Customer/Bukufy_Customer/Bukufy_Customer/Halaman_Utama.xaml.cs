@@ -23,5 +23,27 @@ namespace Bukufy_Customer
         {
             InitializeComponent();
         }
+
+        private void btnKeranjang_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnBeli_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAkun_Click(object sender, RoutedEventArgs e)
+        {
+            Halaman_Profil window = new Halaman_Profil();
+            window.Show();
+            this.Close();
+        }
+
+        private void btnKeranjangHead_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
