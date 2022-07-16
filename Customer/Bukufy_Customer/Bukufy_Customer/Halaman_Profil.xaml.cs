@@ -26,12 +26,16 @@ namespace Bukufy_Customer
 
         private void btnAkun_Click(object sender, RoutedEventArgs e)
         {
-
+            Halaman_Profil window = new Halaman_Profil();
+            window.Show();
+            this.Close();
         }
 
         private void btnKeranjangHead_Click(object sender, RoutedEventArgs e)
         {
-
+            Halaman_Keranjang window = new Halaman_Keranjang();
+            window.Show();
+            this.Close();
         }
 
         private void btnAturAkun_Click(object sender, RoutedEventArgs e)

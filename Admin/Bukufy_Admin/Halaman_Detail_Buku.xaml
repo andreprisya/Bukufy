@@ -71,26 +71,45 @@
                     </Grid>
                 </Border>
                 <StackPanel VerticalAlignment="Center" Margin="0,0" Orientation="Horizontal">
-                    <TextBlock Text="PRODUK" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
-                    <TextBlock Text="TRANSAKSI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
-                    <TextBlock Text="EKSPEDISI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
-                    <TextBlock Text="PENERBIT" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Name="btnHalProduk" Click="btnHalProduk_Click">
+                        <TextBlock Text="PRODUK" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}" TextDecorations="Underline"/>
+                    </Button>
+                    <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Name="btnHalTransaksi" Click="btnHalTransaksi_Click">
+                        <TextBlock Text="TRANSAKSI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    </Button>
+                    <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Name="btnHalEkspedisi" Click="btnHalEkspedisi_Click">
+                        <TextBlock Text="EKSPEDISI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    </Button>
+                    <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Name="btnHalPenerbit" Click="btnHalPenerbit_Click">
+                        <TextBlock Text="PENERBIT" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    </Button>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Center" Margin="50,0,50,0">
-                    <Image Source="/Bukufy_Admin;component/assets/icons/profile.png" Width="40"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" Name="btnLogout" Click="btnLogout_Click">
+                        <Image Source="/Bukufy_Admin;component/assets/icons/profile.png" Width="40"/>
+                    </Button>
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Row="1" Margin="150,0,150,100">
                 <StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0,0,0,25">
-                        <Image Source="/Bukufy_Admin;component/assets/icons/back-button.png" Width="30"
+                    <StackPanel>
+                        <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Margin="0,0,0,25" Name="btnKembali" Click="btnKembali_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Bukufy_Admin;component/assets/icons/back-button.png" Width="30"
                            VerticalAlignment="Center" Margin="0,0,15,0"/>
-                        <TextBlock Text="Kembali" Foreground="#FFA26D" FontSize="22"
+                                <TextBlock Text="Kembali" Foreground="#FFA26D" FontSize="22"
                                FontFamily="{StaticResource Poppins}"
                                VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <TextBlock Text="Detail Buku" FontSize="36" FontFamily="{StaticResource PoppinsSemi}"/>
                     </StackPanel>
-                    <TextBlock Text="Detail Buku" FontSize="36" FontFamily="{StaticResource PoppinsSemi}"/>
-                    <Grid>
+                    <Grid Margin="0, 8, 0, 0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="2*"/>
@@ -99,9 +118,9 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Image Grid.Column="0" Grid.Row="0"/>
-                        <StackPanel Grid.Column="1" Grid.Row="0">
-                            <TextBlock Text="Sebuah Seni Untuk Bersikap Bodo Amat"
+                        <Image Grid.Column="0" Grid.Row="0" Name="imageContainer" Margin="0,0,16,0"/>
+                        <StackPanel Grid.Column="1" Grid.Row="0" Margin="16, 0, 0, 0">
+                            <TextBlock Name="txtHeadline"
                                        FontSize="30" FontFamily="{StaticResource PoppinsSemi}"/>
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -116,52 +135,52 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Text="Judul" Grid.Column="0" Grid.Row="0"
+                                <TextBlock Text="Judul" Grid.Column="0" Grid.Row="0" Margin="0,4"
                                            FontSize="20" FontFamily="{StaticResource Poppins}"/>
-                                <TextBlock Text="Penulis" Grid.Column="0" Grid.Row="1"
+                                <TextBlock Text="Penulis" Grid.Column="0" Grid.Row="1" Margin="0,4"
                                            FontSize="20" FontFamily="{StaticResource Poppins}"/>
-                                <TextBlock Text="Penerbit" Grid.Column="0" Grid.Row="2"
+                                <TextBlock Text="Penerbit" Grid.Column="0" Grid.Row="2" Margin="0,4"
                                            FontSize="20" FontFamily="{StaticResource Poppins}"/>
-                                <TextBlock Text="Harga" Grid.Column="0" Grid.Row="3"
+                                <TextBlock Text="Harga" Grid.Column="0" Grid.Row="3" Margin="0,4"
                                            FontSize="20" FontFamily="{StaticResource Poppins}"/>
-                                <TextBlock Text="Stok" Grid.Column="0" Grid.Row="4"
-                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
-                                
-                                <TextBlock Text=":" Grid.Column="1" Grid.Row="0"
-                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
-                                <TextBlock Text=":" Grid.Column="1" Grid.Row="1"
-                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
-                                <TextBlock Text=":" Grid.Column="1" Grid.Row="2"
-                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
-                                <TextBlock Text=":" Grid.Column="1" Grid.Row="3"
-                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
-                                <TextBlock Text=":" Grid.Column="1" Grid.Row="4"
+                                <TextBlock Text="Stok" Grid.Column="0" Grid.Row="4" Margin="0,4"
                                            FontSize="20" FontFamily="{StaticResource Poppins}"/>
 
-                                <TextBlock Text="Sebuah Seni Untuk Bersikap Bodo Amat" 
-                                           Grid.Column="2" Grid.Row="0" Margin="15,0,0,0"
+                                <TextBlock Text=":" Grid.Column="1" Grid.Row="0" Margin="0,4"
                                            FontSize="20" FontFamily="{StaticResource Poppins}"/>
-                                <TextBlock Text="Mark Manson" Grid.Column="2" Grid.Row="1" Margin="15,0,0,0"
+                                <TextBlock Text=":" Grid.Column="1" Grid.Row="1" Margin="0,4"
                                            FontSize="20" FontFamily="{StaticResource Poppins}"/>
-                                <TextBlock Text="PT. Andre &amp; Egy" Grid.Column="2" Grid.Row="2" Margin="15,0,0,0"
+                                <TextBlock Text=":" Grid.Column="1" Grid.Row="2" Margin="0,4"
                                            FontSize="20" FontFamily="{StaticResource Poppins}"/>
-                                <TextBlock Text="Rp. 80.999" Grid.Column="2" Grid.Row="3" Margin="15,0,0,0"
+                                <TextBlock Text=":" Grid.Column="1" Grid.Row="3" Margin="0,4"
                                            FontSize="20" FontFamily="{StaticResource Poppins}"/>
-                                <TextBlock Text="99" Grid.Column="2" Grid.Row="4" Margin="15,0,0,0"
+                                <TextBlock Text=":" Grid.Column="1" Grid.Row="4" Margin="0,4"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+
+                                <TextBlock Name="txtJudul" 
+                                           Grid.Column="2" Grid.Row="0" Margin="15,4,0,4"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Name="txtPenulis" Grid.Column="2" Grid.Row="1" Margin="15,4,0,4"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Name="txtPenerbit" Grid.Column="2" Grid.Row="2" Margin="15,4,0,4"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Name="txtHarga" Grid.Column="2" Grid.Row="3" Margin="15,4,0,4"
+                                           FontSize="20" FontFamily="{StaticResource Poppins}"/>
+                                <TextBlock Name="txtStok" Grid.Column="2" Grid.Row="4" Margin="15,4,0,4"
                                            FontSize="20" FontFamily="{StaticResource Poppins}"/>
                             </Grid>
                             <StackPanel Margin="0,25,0,0">
                                 <Button Content="Ubah Data" Template="{StaticResource buttonPrimaryStyle}"
                                         Margin="0,10" Foreground="#ffffff" FontSize="20"
-                                        FontFamily="{StaticResource Poppins}"/>
-                                <Button Content="Ubah Data" Template="{StaticResource buttonSecondaryStyle}"
+                                        FontFamily="{StaticResource Poppins}" Name="btnUbah" Click="btnUbah_Click"/>
+                                <Button Content="Hapus Data" Template="{StaticResource buttonSecondaryStyle}"
                                         Margin="0,10" Foreground="#FFA26D" FontSize="20"
-                                        FontFamily="{StaticResource Poppins}"/>
+                                        FontFamily="{StaticResource Poppins}" Name="btnHapus" Click="btnHapus_Click"/>
                             </StackPanel>
                         </StackPanel>
-                        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="0,32">
                             <TextBlock Text="Deskripsi Buku" FontFamily="{StaticResource PoppinsSemi}" FontSize="30"/>
-                            <TextBlock Text="Dalam buku pengembangan diri yang mewakili generasi ini, seorang bloger superstar menunjukkan pada kita bahwa kunci untuk menjadi orang yang lebih kuat, lebih bahagia adalah dengan mengerjakan segala tantangan dengan lebih baik dan berhenti memaksa diri untuk menjadi positif di setiap saat. Selama beberapa tahun belakangan, Mark Manson-melalui blognya yang sangat populer-telah membantu mengoreksi harapan-harapan delusional kita, baik mengenai diri kita sendiri maupun dunia. Ia kini menuangkan buah pikirnya yang keren itu di dalam buku hebat ini. Manson melontarkan argumen bahwa manusia tak sempurna dan terbatas. Begini tulisnya, 'tidak semua orang bisa menjadi luar biasa-ada para pemenang dan pecundang di masyarakat, dan beberapa di antaranya tidak adil dan bukan akibat kesalahan Anda.' Manson mengajak kita untuk mengerti batasan-batasan."
+                            <TextBlock Name="txtDeskripsi"
                                        TextWrapping="Wrap" FontFamily="{StaticResource Poppins}" FontSize="18"/>
                         </StackPanel>
                     </Grid>

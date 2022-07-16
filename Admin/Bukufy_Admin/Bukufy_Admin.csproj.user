@@ -13,7 +13,28 @@
     <Compile Update="Halaman_Edit_Buku.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Halaman_Edit_Ekspedisi.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Halaman_Edit_Penerbit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Halaman_Ekspedisi.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Halaman_Penerbit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Halaman_Tambah_Buku.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Halaman_Tambah_Ekspedisi.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Halaman_Tambah_Penerbit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Halaman_Transaksi.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Halaman_Utama.xaml.cs">
@@ -25,6 +46,9 @@
     <Compile Update="Message.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Prompt.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Halaman_Detail_Buku.xaml">
@@ -33,7 +57,28 @@
     <Page Update="Halaman_Edit_Buku.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Halaman_Edit_Ekspedisi.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Halaman_Edit_Penerbit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Halaman_Ekspedisi.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Halaman_Penerbit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Halaman_Tambah_Buku.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Halaman_Tambah_Ekspedisi.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Halaman_Tambah_Penerbit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Halaman_Transaksi.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Halaman_Utama.xaml">
@@ -43,6 +88,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Message.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Prompt.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

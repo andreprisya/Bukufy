@@ -257,9 +257,9 @@
                                             <Image Source="/Bukufy_Customer;component/assets/sampul/buku.jpg" Width="180"/>
                                         </StackPanel>
                                         <StackPanel Grid.Row="1" Margin="0,20,0,0">
-                                            <TextBlock Text="Rp80.999" FontSize="18" FontFamily="{StaticResource PoppinsBold}"/>
-                                            <TextBlock Text="Sebuah Seni untuk bersikap bodo amat" FontSize="18" FontFamily="{StaticResource Poppins}" />
-                                            <TextBlock Text="Mark Manson" FontSize="14" Foreground="Gray" FontFamily="{StaticResource Poppins}"/>
+                                            <TextBlock Text="Rp.80.999"  FontSize="18" FontFamily="{StaticResource PoppinsBold}"/>
+                                            <TextBlock Text="Sebuah Seni Untuk Bersikap Bodo Amat" FontSize="18" FontFamily="{StaticResource Poppins}" />
+                                            <TextBlock Text="Mark Manson"  FontSize="14" Foreground="Gray" FontFamily="{StaticResource Poppins}"/>
                                             <Button Content="+Keranjang" Name="btnKeranjang" Margin="0,10,0,0" 
                                                     Template="{StaticResource buttonStyle}" Click="btnKeranjang_Click"
                                                     Foreground="#ffffff" FontFamily="{StaticResource Poppins}" FontSize="16"/>
@@ -281,12 +281,12 @@
                                             <RowDefinition Height="3*"/>
                                         </Grid.RowDefinitions>
                                         <StackPanel Grid.Row="0">
-                                            <Image Source="/Bukufy_Customer;component/assets/sampul/buku.jpg" Width="180"/>
+                                            <Image Source="/Bukufy_Customer;component/assets/sampul/laskar-pelangi.jpg" Width="180"/>
                                         </StackPanel>
                                         <StackPanel Grid.Row="1" Margin="0,20,0,0">
-                                            <TextBlock Text="Rp80.999" FontSize="18" FontFamily="{StaticResource PoppinsBold}"/>
-                                            <TextBlock Text="Sebuah Seni untuk bersikap bodo amat" FontSize="18" FontFamily="{StaticResource Poppins}" />
-                                            <TextBlock Text="Mark Manson" FontSize="14" Foreground="Gray" FontFamily="{StaticResource Poppins}"/>
+                                            <TextBlock Text="Rp.80.999"  FontSize="18" FontFamily="{StaticResource PoppinsBold}"/>
+                                            <TextBlock Text="Laskar Pelangi" FontSize="18" FontFamily="{StaticResource Poppins}" />
+                                            <TextBlock Text="Andrea Hirata"  FontSize="14" Foreground="Gray" FontFamily="{StaticResource Poppins}"/>
                                             <Button Content="+Keranjang" Name="btnKeranjang2" Margin="0,10,0,0" 
                                                     Template="{StaticResource buttonStyle}" Click="btnKeranjang_Click"
                                                     Foreground="#ffffff" FontFamily="{StaticResource Poppins}" FontSize="16"/>
@@ -308,12 +308,12 @@
                                             <RowDefinition Height="3*"/>
                                         </Grid.RowDefinitions>
                                         <StackPanel Grid.Row="0">
-                                            <Image Source="/Bukufy_Customer;component/assets/sampul/buku.jpg" Width="180"/>
+                                            <Image Source="/Bukufy_Customer;component/assets/sampul/marmut-merah-jambu.jpg" Width="180"/>
                                         </StackPanel>
                                         <StackPanel Grid.Row="1" Margin="0,20,0,0">
-                                            <TextBlock Text="Rp80.999" FontSize="18" FontFamily="{StaticResource PoppinsBold}"/>
-                                            <TextBlock Text="Sebuah Seni untuk bersikap bodo amat" FontSize="18" FontFamily="{StaticResource Poppins}" />
-                                            <TextBlock Text="Mark Manson" FontSize="14" Foreground="Gray" FontFamily="{StaticResource Poppins}"/>
+                                            <TextBlock Text="Rp.99.000"  FontSize="18" FontFamily="{StaticResource PoppinsBold}"/>
+                                            <TextBlock Text="Marmut Merah Jambu" FontSize="18" FontFamily="{StaticResource Poppins}" />
+                                            <TextBlock Text="Raditya Dika"  FontSize="14" Foreground="Gray" FontFamily="{StaticResource Poppins}"/>
                                             <Button Content="+Keranjang" Name="btnKeranjang3" Margin="0,10,0,0" 
                                                     Template="{StaticResource buttonStyle}" Click="btnKeranjang_Click"
                                                     Foreground="#ffffff" FontFamily="{StaticResource Poppins}" FontSize="16"/>
@@ -335,16 +335,16 @@
                                             <RowDefinition Height="3*"/>
                                         </Grid.RowDefinitions>
                                         <StackPanel Grid.Row="0">
-                                            <Image Source="/Bukufy_Customer;component/assets/sampul/buku.jpg" Width="180"/>
+                                            <Image Source="/Bukufy_Customer;component/assets/sampul/rdp.jpg" Width="180"/>
                                         </StackPanel>
                                         <StackPanel Grid.Row="1" Margin="0,20,0,0">
-                                            <TextBlock Text="Rp80.999" FontSize="18" FontFamily="{StaticResource PoppinsBold}"/>
-                                            <TextBlock Text="Sebuah Seni untuk bersikap bodo amat" FontSize="18" FontFamily="{StaticResource Poppins}" />
-                                            <TextBlock Text="Mark Manson" FontSize="14" Foreground="Gray" FontFamily="{StaticResource Poppins}"/>
-                                            <Button Content="+Keranjang" Name="btnKeranjang4" Margin="0,10,0,0" 
+                                            <TextBlock Text="Rp.88.000"  FontSize="18" FontFamily="{StaticResource PoppinsBold}"/>
+                                            <TextBlock Text="Ronggeng Dukuh Paruk" FontSize="18" FontFamily="{StaticResource Poppins}" />
+                                            <TextBlock Text="Ahmad Tohari"  FontSize="14" Foreground="Gray" FontFamily="{StaticResource Poppins}"/>
+                                            <Button Content="+Keranjang" Margin="0,10,0,0" 
                                                     Template="{StaticResource buttonStyle}" Click="btnKeranjang_Click"
                                                     Foreground="#ffffff" FontFamily="{StaticResource Poppins}" FontSize="16"/>
-                                            <Button Content="Beli" Name="btnBeli4" Margin="0,10,0,0" 
+                                            <Button Content="Beli"  Margin="0,10,0,0" 
                                                     Template="{StaticResource buttonStyle2}" Click="btnBeli_Click"
                                                     Foreground="#FFA26D" FontFamily="{StaticResource Poppins}" FontSize="16"/>
                                         </StackPanel>
@@ -366,8 +366,125 @@
                         <Label Content="Lihat Semua" HorizontalAlignment="Right" Foreground="#FFA26D" FontSize="20" FontFamily="{StaticResource PoppinsSemi}" />
                     </StackPanel>
                     <StackPanel Grid.Row="1">
-                        
+                        <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Margin="0,10,0,0">
+                            <Border BorderThickness="1" CornerRadius="12" Height="490" Width="290" Background="White" BorderBrush="LightGray">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="LightGray" ShadowDepth="2"/>
+                                </Border.Effect>
+                                <Grid Margin="20">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="4*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0">
+                                        <Image Source="/Bukufy_Customer;component/assets/sampul/buku.jpg" Width="180"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Margin="0,20,0,0">
+                                        <TextBlock Text="Rp.80.999"  FontSize="18" FontFamily="{StaticResource PoppinsBold}"/>
+                                        <TextBlock Text="Sebuah Seni Untuk Bersikap Bodo Amat" FontSize="18" FontFamily="{StaticResource Poppins}" />
+                                        <TextBlock Text="Mark Manson"  FontSize="14" Foreground="Gray" FontFamily="{StaticResource Poppins}"/>
+                                        <Button Content="+Keranjang" Margin="0,10,0,0" 
+                                                    Template="{StaticResource buttonStyle}" Click="btnKeranjang_Click"
+                                                    Foreground="#ffffff" FontFamily="{StaticResource Poppins}" FontSize="16"/>
+                                        <Button Content="Beli" Margin="0,10,0,0" 
+                                                    Template="{StaticResource buttonStyle2}" Click="btnBeli_Click"
+                                                    Foreground="#FFA26D" FontFamily="{StaticResource Poppins}" FontSize="16"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="0,10,0,0">
+                            <Border BorderThickness="1" CornerRadius="12" Height="490" Width="290" Background="White" BorderBrush="LightGray">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="LightGray" ShadowDepth="2"/>
+                                </Border.Effect>
+                                <Grid Margin="20">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="4*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0">
+                                        <Image Source="/Bukufy_Customer;component/assets/sampul/buku.jpg" Width="180"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Margin="0,20,0,0">
+                                        <TextBlock Text="Rp.80.999"  FontSize="18" FontFamily="{StaticResource PoppinsBold}"/>
+                                        <TextBlock Text="Sebuah Seni Untuk Bersikap Bodo Amat" FontSize="18" FontFamily="{StaticResource Poppins}" />
+                                        <TextBlock Text="Mark Manson"  FontSize="14" Foreground="Gray" FontFamily="{StaticResource Poppins}"/>
+                                        <Button Content="+Keranjang"  Margin="0,10,0,0" 
+                                                    Template="{StaticResource buttonStyle}" Click="btnKeranjang_Click"
+                                                    Foreground="#ffffff" FontFamily="{StaticResource Poppins}" FontSize="16"/>
+                                        <Button Content="Beli"  Margin="0,10,0,0" 
+                                                    Template="{StaticResource buttonStyle2}" Click="btnBeli_Click"
+                                                    Foreground="#FFA26D" FontFamily="{StaticResource Poppins}" FontSize="16"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" Margin="0,10,0,0">
+                            <Border BorderThickness="1" CornerRadius="12" Height="490" Width="290" Background="White" BorderBrush="LightGray">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="LightGray" ShadowDepth="2"/>
+                                </Border.Effect>
+                                <Grid Margin="20">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="4*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0">
+                                        <Image Source="/Bukufy_Customer;component/assets/sampul/buku.jpg" Width="180"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Margin="0,20,0,0">
+                                        <TextBlock Text="Rp.80.999"  FontSize="18" FontFamily="{StaticResource PoppinsBold}"/>
+                                        <TextBlock Text="Sebuah Seni Untuk Bersikap Bodo Amat" FontSize="18" FontFamily="{StaticResource Poppins}" />
+                                        <TextBlock Text="Mark Manson"  FontSize="14" Foreground="Gray" FontFamily="{StaticResource Poppins}"/>
+                                        <Button Content="+Keranjang" Margin="0,10,0,0" 
+                                                    Template="{StaticResource buttonStyle}" Click="btnKeranjang_Click"
+                                                    Foreground="#ffffff" FontFamily="{StaticResource Poppins}" FontSize="16"/>
+                                        <Button Content="Beli"  Margin="0,10,0,0" 
+                                                    Template="{StaticResource buttonStyle2}" Click="btnBeli_Click"
+                                                    Foreground="#FFA26D" FontFamily="{StaticResource Poppins}" FontSize="16"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Column="3" Margin="0,10,0,0">
+                            <Border BorderThickness="1" CornerRadius="12" Height="490" Width="290" Background="White" BorderBrush="LightGray">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="LightGray" ShadowDepth="2"/>
+                                </Border.Effect>
+                                <Grid Margin="20">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="4*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0">
+                                        <Image Source="/Bukufy_Customer;component/assets/sampul/buku.jpg" Width="180"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Margin="0,20,0,0">
+                                        <TextBlock Text="Rp.80.999"  FontSize="18" FontFamily="{StaticResource PoppinsBold}"/>
+                                        <TextBlock Text="Sebuah Seni Untuk Bersikap Bodo Amat" FontSize="18" FontFamily="{StaticResource Poppins}" />
+                                        <TextBlock Text="Mark Manson"  FontSize="14" Foreground="Gray" FontFamily="{StaticResource Poppins}"/>
+                                        <Button Content="+Keranjang" Name="btnKeranjang4" Margin="0,10,0,0" 
+                                                    Template="{StaticResource buttonStyle}" Click="btnKeranjang_Click"
+                                                    Foreground="#ffffff" FontFamily="{StaticResource Poppins}" FontSize="16"/>
+                                        <Button Content="Beli" Name="btnBeli4" Margin="0,10,0,0" 
+                                                    Template="{StaticResource buttonStyle2}" Click="btnBeli_Click"
+                                                    Foreground="#FFA26D" FontFamily="{StaticResource Poppins}" FontSize="16"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+
+                        </Grid>
                     </StackPanel>
+                        
                 </Grid>
             </StackPanel>
         </Grid>

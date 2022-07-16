@@ -43,7 +43,9 @@ namespace Bukufy_Customer
 
         private void btnSimpan_Click(object sender, RoutedEventArgs e)
         {
-
+            Halaman_Profil window = new Halaman_Profil();
+            window.Show();
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -76,7 +78,9 @@ namespace Bukufy_Customer
 
         private void btnKeranjangHead_Click(object sender, RoutedEventArgs e)
         {
-
+            Halaman_Keranjang window = new Halaman_Keranjang();
+            window.Show();
+            this.Close();
         }
 
         private void btnAkun_Click(object sender, RoutedEventArgs e)

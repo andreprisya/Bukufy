@@ -10,6 +10,22 @@
         Height="{x:Static SystemParameters.PrimaryScreenHeight}" 
         Width="{x:Static SystemParameters.PrimaryScreenWidth}">
     <Window.Resources>
+        <Style TargetType="{x:Type TextBox}" x:Key="textAreaStyle">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="MinHeight" Value="52"/>
+            <Setter Property="Foreground" Value="#555353"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        <Border Background="#D9D9D9" CornerRadius="6" Padding="15">
+                            <ScrollViewer Margin="0" x:Name="PART_ContentHost" 
+                                          VerticalAlignment="Top" Grid.Column="0" 
+                                          HorizontalAlignment="Left"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style TargetType="{x:Type TextBox}" x:Key="textBoxStyle">
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="MinHeight" Value="52"/>
@@ -71,36 +87,54 @@
                     </Grid>
                 </Border>
                 <StackPanel VerticalAlignment="Center" Margin="0,0" Orientation="Horizontal">
-                    <TextBlock Text="PRODUK" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
-                    <TextBlock Text="TRANSAKSI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
-                    <TextBlock Text="EKSPEDISI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
-                    <TextBlock Text="PENERBIT" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Name="btnHalProduk" Click="btnHalProduk_Click">
+                        <TextBlock Text="PRODUK" TextDecorations="Underline" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    </Button>
+                    <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Name="btnHalTransaksi" Click="btnHalTransaksi_Click">
+                        <TextBlock Text="TRANSAKSI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    </Button>
+                    <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Name="btnHalEkspedisi" Click="btnHalEkspedisi_Click">
+                        <TextBlock Text="EKSPEDISI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    </Button>
+                    <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Name="btnHalPenerbit" Click="btnHalPenerbit_Click">
+                        <TextBlock Text="PENERBIT" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    </Button>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Center" Margin="50,0,50,0">
-                    <Image Source="/Bukufy_Admin;component/assets/icons/profile.png" Width="40"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" Name="btnLogout" Click="btnLogout_Click">
+                        <Image Source="/Bukufy_Admin;component/assets/icons/profile.png" Width="40"/>
+                    </Button>
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Row="1" Margin="150,0,150,100">
                 <StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0,0,0,25">
-                        <Image Source="/Bukufy_Admin;component/assets/icons/back-button.png" Width="30"
+                    <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Margin="0,0,0,25" Name="btnKembali" Click="btnKembali_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Bukufy_Admin;component/assets/icons/back-button.png" Width="30"
                            VerticalAlignment="Center" Margin="0,0,15,0"/>
-                        <TextBlock Text="Kembali" Foreground="#FFA26D" FontSize="22"
+                            <TextBlock Text="Kembali" Foreground="#FFA26D" FontSize="22"
                                FontFamily="{StaticResource Poppins}"
                                VerticalAlignment="Center"/>
-                    </StackPanel>
+                        </StackPanel>
+                    </Button>
                     <TextBlock Text="Edit Data Buku" FontSize="36" FontFamily="{StaticResource PoppinsSemi}"/>
                 </StackPanel>
                 <StackPanel Margin="150,0" VerticalAlignment="Center">
                     <StackPanel Margin="0,10">
                         <Label Content="Judul Buku" FontSize="18" FontFamily="{StaticResource Poppins}"
                            Margin="-5,0,0,0"/>
-                        <TextBox Style="{StaticResource textBoxStyle}"/>
+                        <TextBox Style="{StaticResource textBoxStyle}" Name="txtJudul"/>
                     </StackPanel>
                     <StackPanel Margin="0,10">
                         <Label Content="Deskripsi Buku" FontSize="18" FontFamily="{StaticResource Poppins}"
                            Margin="-5,0,0,0"/>
-                        <TextBox Style="{StaticResource textBoxStyle}" Height="150"/>
+                        <TextBox Style="{StaticResource textAreaStyle}" Height="150" Name="txtDeskripsi"
+                                 TextWrapping="Wrap"/>
                     </StackPanel>
                     <Grid Margin="0,10">
                         <Grid.ColumnDefinitions>
@@ -108,14 +142,23 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0" Margin="0,0,15,0">
-                            <Label Content="Penerbit Buku" FontSize="18" FontFamily="{StaticResource Poppins}"
-                           Margin="-5,0,0,0"/>
-                            <TextBox Style="{StaticResource textBoxStyle}"/>
+                            <Label Content="Penerbit Buku" FontSize="18" FontFamily="{StaticResource Poppins}" Margin="-5,0,0,0"/>
+                            <ComboBox Name="cmbPenerbit" BorderThickness="0" VerticalContentAlignment="Center" SelectedValuePath="Id_penerbit"
+                                      SelectedIndex="0" Height="52" SelectionChanged="cmbPenerbit_SelectionChanged">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                            <TextBlock Text="{Binding Id_penerbit}" VerticalAlignment="Center" Visibility="Hidden"/>
+                                            <TextBlock Text="{Binding Nama}" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
                         </StackPanel>
                         <StackPanel Grid.Column="1" Margin="15,0,0,0">
                             <Label Content="Penulis Buku" FontSize="18" FontFamily="{StaticResource Poppins}"
                            Margin="-5,0,0,0"/>
-                            <TextBox Style="{StaticResource textBoxStyle}"/>
+                            <TextBox Style="{StaticResource textBoxStyle}" Name="txtPenulis"/>
                         </StackPanel>
                     </Grid>
                     <Grid Margin="0,10">
@@ -126,26 +169,47 @@
                         <StackPanel Grid.Column="0" Margin="0,0,15,0">
                             <Label Content="Harga Buku" FontSize="18" FontFamily="{StaticResource Poppins}"
                            Margin="-5,0,0,0"/>
-                            <TextBox Style="{StaticResource textBoxStyle}"/>
+                            <TextBox Style="{StaticResource textBoxStyle}" Name="txtHarga"/>
                         </StackPanel>
                         <StackPanel Grid.Column="1" Margin="15,0,0,0">
                             <Label Content="Stok Buku" FontSize="18" FontFamily="{StaticResource Poppins}"
                            Margin="-5,0,0,0"/>
-                            <TextBox Style="{StaticResource textBoxStyle}"/>
+                            <TextBox Style="{StaticResource textBoxStyle}" Name="txtStok"/>
                         </StackPanel>
                     </Grid>
                     <StackPanel Margin="0,10">
                         <Label Content="Gambar Sampul Buku" FontSize="18" FontFamily="{StaticResource Poppins}"
-                           Margin="-5,0,0,0"/>
-                        <TextBox Style="{StaticResource textBoxStyle}" Height="150"/>
+                                        Margin="-5,0,0,0"/>
+                        <Border CornerRadius="6" Background="#D9D9D9" BorderThickness="0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="6*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <TextBox Style="{StaticResource textBoxStyle}" Name="txtGambar"
+                                             Text="Pilih file gambar" IsEnabled="False"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1">
+                                    <Border CornerRadius="0,6,6,0" Background="#7C7979" Height="52">
+                                        <Button Content="Browse" FontFamily="{StaticResource Poppins}" FontSize="18" 
+                                                BorderBrush="Transparent" BorderThickness="0"
+                                                Name="btnBrowse" Click="btnBrowse_Click"
+                                                Background="Transparent" Foreground="#fff"/>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
                     </StackPanel>
-                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,10">
+                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,15">
                         <Button Width="150" Content="Batal" Margin="0,0,10,0" Foreground="#FFA26D"
                                 FontSize="20" FontFamily="{StaticResource Poppins}"
-                                Template="{StaticResource buttonSecondaryStyle}"/>
-                        <Button Width="150" Content="Tambah" Margin="10,0,0,0" Foreground="#ffffff"
+                                Template="{StaticResource buttonSecondaryStyle}"
+                                Name="btnBatal" Click="btnBatal_Click"/>
+                        <Button Width="150" Content="Ubah" Margin="10,0,0,0" Foreground="#ffffff"
                                 FontSize="20" FontFamily="{StaticResource Poppins}"
-                                Template="{StaticResource buttonPrimaryStyle}"/>
+                                Template="{StaticResource buttonPrimaryStyle}"
+                                Name="btnUbah" Click="btnUbah_Click"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

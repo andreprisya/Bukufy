@@ -237,6 +237,9 @@
                                 <TextBlock VerticalAlignment="Top" Text="Kembali" FontSize="25" FontFamily="{StaticResource PoppinsSemi}" Foreground="#FFA26D" Margin="10,0,0,0"/>
                             </Button>
                         </StackPanel>
+                        <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal" Margin="40,0,0,0">
+                            <TextBlock Text="Profil Saya" FontSize="30" FontFamily="{StaticResource PoppinsSemi}"/>
+                        </StackPanel>
                         <StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Vertical">
                             <Image VerticalAlignment="Top"  Source="/Bukufy_Customer;component/assets/icons/profile.png" Width="200"/>
                             <Border Margin="0,20,0,0" BorderThickness="1" Width="600">

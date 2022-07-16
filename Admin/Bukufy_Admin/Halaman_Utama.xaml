@@ -38,103 +38,173 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+        <ControlTemplate x:Key="buttonPrimaryStyle" TargetType="{x:Type Button}">
+            <Grid>
+                <Border Background="#FFA26D" CornerRadius="14"/>
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Height" Value="Auto">
+                    <Setter Property="MinHeight" Value="52"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="buttonSecondaryStyle" TargetType="{x:Type Button}">
+            <Grid>
+                <Border BorderThickness="1" BorderBrush="#FFA26D" CornerRadius="14"/>
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Height" Value="Auto">
+                    <Setter Property="MinHeight" Value="52"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="buttonDetailStyle" TargetType="{x:Type Button}">
+            <Grid>
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Height" Value="Auto">
+                    <Setter Property="MinHeight" Value="52"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
     </Window.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="4*"/>
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Image Source="/Bukufy_Admin;component/assets/logo/Logo Bukufy Kesamping.png" 
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image Source="/Bukufy_Admin;component/assets/logo/Logo Bukufy Kesamping.png" 
                    Width="250" VerticalAlignment="Center"/>
-            <Border CornerRadius="6" Background="#D9D9D9" VerticalAlignment="Center" Width="450" Margin="25,0,50,0">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="9*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="/Bukufy_Admin;component/assets/icons/magnifying-glass.png" Width="15"/>
-                    <TextBox Grid.Column="1" Style="{StaticResource textBoxStyle}"
+                <Border CornerRadius="6" Background="#D9D9D9" VerticalAlignment="Center" Width="450" Margin="25,0,50,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="9*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="/Bukufy_Admin;component/assets/icons/magnifying-glass.png" Width="15"/>
+                        <TextBox Grid.Column="1" Style="{StaticResource textBoxStyle}"
                              Text="Cari Buku, Judul Buku, Penulis"/>
-                </Grid>
-            </Border>
-            <StackPanel VerticalAlignment="Center" Margin="0,0" Orientation="Horizontal">
-                <TextBlock Text="PRODUK" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
-                <TextBlock Text="TRANSAKSI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
-                <TextBlock Text="EKSPEDISI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
-                <TextBlock Text="PENERBIT" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    </Grid>
+                </Border>
+                <StackPanel VerticalAlignment="Center" Margin="0,0" Orientation="Horizontal">
+                    <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Name="btnHalProduk" Click="btnHalProduk_Click">
+                        <TextBlock Text="PRODUK" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}" TextDecorations="Underline"/>
+                    </Button>
+                    <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Name="btnHalTransaksi" Click="btnHalTransaksi_Click">
+                        <TextBlock Text="TRANSAKSI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    </Button>
+                    <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Name="btnHalEkspedisi" Click="btnHalEkspedisi_Click">
+                        <TextBlock Text="EKSPEDISI" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    </Button>
+                    <Button Background="Transparent" HorizontalAlignment="Left" BorderBrush="Transparent" 
+                            BorderThickness="0" Name="btnHalPenerbit" Click="btnHalPenerbit_Click">
+                        <TextBlock Text="PENERBIT" Padding="15,5" FontSize="18" FontFamily="{StaticResource Poppins}"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" Margin="50,0,50,0">
+                    <Image Source="/Bukufy_Admin;component/assets/icons/profile.png" Width="40"/>
+                </StackPanel>
             </StackPanel>
-            <StackPanel VerticalAlignment="Center" Margin="50,0,50,0">
-                <Image Source="/Bukufy_Admin;component/assets/icons/profile.png" Width="40"/>
-            </StackPanel>
-        </StackPanel>
-        <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" MinWidth="900" Margin="0,50,0,0">
-            <DockPanel LastChildFill="False">
-                <TextBlock Text="Data Produk Buku" FontSize="36" FontFamily="{StaticResource PoppinsSemi}" 
+            <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" MinWidth="900" Margin="0,50,0,100">
+                <DockPanel LastChildFill="False">
+                    <TextBlock Text="Data Produk Buku" FontSize="36" FontFamily="{StaticResource PoppinsSemi}" 
                            DockPanel.Dock="Left"/>
-                <Button Template="{StaticResource buttonStyle}" Content="Tambah Data Buku" Width="300" Name="btnHalamanTambah"
+                    <Button Template="{StaticResource buttonStyle}" Content="Tambah Data Buku" Width="300" Name="btnHalamanTambah"
                         FontSize="18" Foreground="#FFF" FontFamily="{StaticResource Poppins}" DockPanel.Dock="Right"
                         Click="btnHalamanTambah_Click"/>
-            </DockPanel>
-            <Grid Width="900" Background="#FFA26D" Margin="0,25,0,0" Height="50">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="NO." Grid.Column="0" TextAlignment="Center" VerticalAlignment="Center"
-                           FontSize="24" FontFamily="{StaticResource Poppins}" Foreground="#fff"/>
-                <TextBlock Text="JUDUL" Grid.Column="1" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"
-                           FontSize="24" FontFamily="{StaticResource Poppins}" Foreground="#fff"/>
-                <TextBlock Text="PENERBIT" Grid.Column="2" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"
-                           FontSize="24" FontFamily="{StaticResource Poppins}" Foreground="#fff"/>
-                <TextBlock Text="PENULIS" Grid.Column="3" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"
-                           FontSize="24" FontFamily="{StaticResource Poppins}" Foreground="#fff"/>
-                <TextBlock Text="STOK" Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center"
-                           FontSize="24" FontFamily="{StaticResource Poppins}" Foreground="#fff"/>
-                <TextBlock Text="HARGA" Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center"
-                           FontSize="24" FontFamily="{StaticResource Poppins}" Foreground="#fff"/>
-            </Grid>
-            <ListBox x:Name="listDataBuku" Width="900" BorderThickness="0" Padding="0">
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="ListBoxItem">
-                        <Setter Property="Padding" Value="0"/>
-                        <Setter Property="Margin" Value="0"/>
-                        <Setter Property="BorderThickness" Value="0"/>
-                    </Style>
-                </ListBox.ItemContainerStyle>
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <DataTemplate.Resources>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="FontFamily" Value="{StaticResource Poppins}"/>
-                                <Setter Property="FontSize" Value="18"/>
-                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                <Setter Property="Margin" Value="0,10"/>
-                            </Style>
-                        </DataTemplate.Resources>
-                        <Grid Width="898">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="4*"/>
-                                <ColumnDefinition Width="3*"/>
-                                <ColumnDefinition Width="3*"/>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="2*"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding nomor}" Grid.Column="0" TextAlignment="Center"/>
-                            <TextBlock Text="{Binding judul}" Grid.Column="1" TextAlignment="Left" TextWrapping="Wrap"/>
-                            <TextBlock Text="{Binding penerbit}" Grid.Column="2" TextAlignment="Left" TextWrapping="Wrap"/>
-                            <TextBlock Text="{Binding penulis}" Grid.Column="3" TextAlignment="Left" TextWrapping="Wrap"/>
-                            <TextBlock Text="{Binding stok}" Grid.Column="4" TextAlignment="Center"/>
-                            <TextBlock Text="{Binding harga}" Grid.Column="5" TextAlignment="Center"/>
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </StackPanel>
-    </Grid>
+                </DockPanel>
+                <Grid Width="1100" Background="#FFA26D" Margin="0,25,0,0" Height="50">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="NO." Grid.Column="0" TextAlignment="Center" VerticalAlignment="Center"
+                           FontSize="22" FontFamily="{StaticResource Poppins}" Foreground="#fff"/>
+                    <TextBlock Text="JUDUL" Grid.Column="1" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"
+                           FontSize="22" FontFamily="{StaticResource Poppins}" Foreground="#fff"/>
+                    <TextBlock Text="PENERBIT" Grid.Column="2" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"
+                           FontSize="22" FontFamily="{StaticResource Poppins}" Foreground="#fff"/>
+                    <TextBlock Text="PENULIS" Grid.Column="3" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"
+                           FontSize="22" FontFamily="{StaticResource Poppins}" Foreground="#fff"/>
+                    <TextBlock Text="STOK" Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center"
+                           FontSize="22" FontFamily="{StaticResource Poppins}" Foreground="#fff"/>
+                    <TextBlock Text="HARGA" Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center"
+                           FontSize="22" FontFamily="{StaticResource Poppins}" Foreground="#fff"/>
+                    <TextBlock Text="AKSI" Grid.Column="6" TextAlignment="Center" VerticalAlignment="Center"
+                           FontSize="22" FontFamily="{StaticResource Poppins}" Foreground="#fff"/>
+                </Grid>
+                <ListBox x:Name="listDataBuku" Width="1100" BorderThickness="0" Padding="0">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Padding" Value="0"/>
+                            <Setter Property="Margin" Value="0"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="IsSelected" Value="True"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <DataTemplate.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontFamily" Value="{StaticResource Poppins}"/>
+                                    <Setter Property="FontSize" Value="16"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="Margin" Value="0,10"/>
+                                </Style>
+                            </DataTemplate.Resources>
+                            <Border BorderThickness="0,0,0,0.5" BorderBrush="#4A4A4A">
+                                <Grid Width="1098" Margin="0,8">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="6*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding Id_buku}" Visibility="Hidden" Name="id_buku"/>
+                                    <TextBlock Text="{Binding Nomor}" Grid.Column="0" TextAlignment="Center" VerticalAlignment="Top"/>
+                                    <TextBlock Text="{Binding Judul}" Name="txtJudul" Grid.Column="1" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                                    <TextBlock Text="{Binding Penerbit}" Name="txtPenerbit" Grid.Column="2" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                                    <TextBlock Text="{Binding Penulis}" Grid.Column="3" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                                    <TextBlock Text="{Binding Stok}" Grid.Column="4" TextAlignment="Center" VerticalAlignment="Top"/>
+                                    <TextBlock Text="{Binding Harga}" Grid.Column="5" TextAlignment="Center" VerticalAlignment="Top"/>
+                                    <StackPanel Orientation="Vertical" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,6">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Content="detail" Template="{StaticResource buttonDetailStyle}" FontFamily="{StaticResource Poppins}"
+                                           Name="btnDetailBuku" Click="btnDetailBuku_Click" Margin="8,0" Height="30"/>
+                                            <Button Content="edit" Margin="8,0" Template="{StaticResource buttonSecondaryStyle}" FontFamily="{StaticResource Poppins}"
+                                            Name="btnEdit" Click="btnEdit_Click" Height="30" Width="50" Foreground="#FFA26D"/>
+                                            <Button Content="hapus" Margin="8,0" Height="30" Template="{StaticResource buttonPrimaryStyle}" 
+                                            FontFamily="{StaticResource Poppins}" Width="60" Name="btnHapus" Click="btnHapus_Click"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <TextBlock HorizontalAlignment="Center" Name="tableLabelStatus" FontFamily="{StaticResource Poppins}" 
+                       FontSize="18" Margin="0, 16" TextAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Window>

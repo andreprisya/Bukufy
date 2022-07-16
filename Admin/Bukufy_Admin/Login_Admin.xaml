@@ -107,9 +107,12 @@
                                 <ColumnDefinition Width="2*"/>
                             </Grid.ColumnDefinitions>
                             <PasswordBox Name="txtPassword" Grid.Column="0"
-                             Style="{StaticResource passwordBoxStyle}"/>
+                                Style="{StaticResource passwordBoxStyle}" Visibility="Visible"/>
+                            <TextBox Name="txtPasswordUnHide" Grid.Column="0" Style="{StaticResource textBoxStyle}" Visibility="Collapsed"/>
                             <Border Grid.Column="1"  CornerRadius="0,6,6,0">
-                                <Image Source="/Bukufy_Admin;component/assets/icons/padlock.png" Width="15"/>
+                                <Button Background="Transparent" BorderBrush="Transparent" Name="btnRevealPwd" Click="btnRevealPwd_Click">
+                                    <Image Source="/Bukufy_Admin;component/assets/icons/padlock.png" Width="15"/>
+                                </Button>
                             </Border>
                         </Grid>
                     </Border>

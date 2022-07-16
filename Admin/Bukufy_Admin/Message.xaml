@@ -31,15 +31,15 @@
         </ControlTemplate>
     </Window.Resources>
     <Grid>
-        <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
+        <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20" Orientation="Vertical">
             <TextBlock Name="txtHeadline" FontSize="48" FontFamily="{StaticResource PoppinsBold}"
                        HorizontalAlignment="Left" TextAlignment="Left" TextWrapping="Wrap"/>
-            <TextBlock Name="txtCaption" FontSize="28" FontFamily="{StaticResource Poppins}"
+            <TextBlock Name="txtCaption" FontSize="18" FontFamily="{StaticResource Poppins}"
                        HorizontalAlignment="Left" TextAlignment="Left" TextWrapping="Wrap"/>
-            <StackPanel Width="250">
+            <StackPanel Width="250" HorizontalAlignment="Center">
                 <Button Template="{StaticResource buttonPrimaryStyle}" Margin="0,15,0,0" HorizontalAlignment="Stretch"
                         FontFamily="{StaticResource Poppins}" FontSize="18" Foreground="#fff"
-                        Grid.Column="0" Name="btnPrimary" Click="btnPrimary_Click"/>
+                        Name="btnPrimary" Click="btnPrimary_Click"/>
             </StackPanel>
         </WrapPanel>
     </Grid>

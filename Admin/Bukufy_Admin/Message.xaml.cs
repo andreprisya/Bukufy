@@ -30,7 +30,7 @@ namespace Bukufy_Admin
 
         private void btnPrimary_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

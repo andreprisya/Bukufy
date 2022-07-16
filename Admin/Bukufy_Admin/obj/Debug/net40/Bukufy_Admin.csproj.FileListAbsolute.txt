@@ -1,4 +1,0 @@
-D:\Bukufy\Admin\Bukufy_Admin\obj\Debug\net40\Bukufy_Admin.csprojAssemblyReference.cache
-D:\Bukufy\Admin\Bukufy_Admin\obj\Debug\net40\Bukufy_Admin.g.resources
-D:\Bukufy\Admin\Bukufy_Admin\obj\Debug\net40\Bukufy_Admin.csproj.CoreCompileInputs.cache
-D:\Bukufy\Admin\Bukufy_Admin\obj\Debug\net40\Bukufy_Admin.AssemblyInfo.cs

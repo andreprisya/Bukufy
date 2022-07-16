@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\Kuliah Egy\Semester 4\Praktikum\BAD\Project\Bukufy_Admin\App.xaml
-6-7761733
+14-1794155419
 
-13-7631437
+27-402543644
 202-1624435420
-Halaman_Detail_Buku.xaml;Halaman_Edit_Buku.xaml;Halaman_Tambah_Buku.xaml;Halaman_Utama.xaml;Login_Admin.xaml;Message.xaml;
+Halaman_Detail_Buku.xaml;Halaman_Edit_Buku.xaml;Halaman_Edit_Ekspedisi.xaml;Halaman_Edit_Penerbit.xaml;Halaman_Ekspedisi.xaml;Halaman_Penerbit.xaml;Halaman_Tambah_Buku.xaml;Halaman_Tambah_Ekspedisi.xaml;Halaman_Tambah_Penerbit.xaml;Halaman_Transaksi.xaml;Halaman_Utama.xaml;Login_Admin.xaml;Message.xaml;Prompt.xaml;
 
 False
 

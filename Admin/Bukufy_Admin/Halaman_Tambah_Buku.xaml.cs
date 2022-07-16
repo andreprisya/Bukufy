@@ -22,23 +22,23 @@ namespace Bukufy_Admin
     /// </summary>
     public partial class Halaman_Tambah_Buku : Window
     {
-        List<Penerbit> listPenerbit;
-        int id_penerbit;
-        string fileName = "", filePath = "", targetDir = "";
-        OpenFileDialog openFile;
+        private readonly List<Penerbit> listPenerbit;
+        private int id_penerbit;
+        private string fileName = "", targetDir = "";
+        private OpenFileDialog openFile;
         public Halaman_Tambah_Buku()
         {
             InitializeComponent();
-            Penerbit penerbit = new Penerbit();
+            Penerbit penerbit = new();
             listPenerbit = penerbit.getAll();
-            List<DataPenerbit> listItems = new List<DataPenerbit>();
+            List<DataPenerbit> listItems = new();
 
             foreach(var data in listPenerbit)
             {
                 listItems.Add(new DataPenerbit()
                 {
-                    id_penerbit = data.id_penerbit,
-                    nama = data.nama
+                    Id_penerbit = data.id_penerbit,
+                    Nama = data.nama
                 });
             }
 
@@ -47,15 +47,15 @@ namespace Bukufy_Admin
 
         private void btnKembali_Click(object sender, RoutedEventArgs e)
         {
-            Halaman_Utama window = new Halaman_Utama();
+            Halaman_Utama window = new();
             window.Show();
-            this.Close();
+            Close();
         }
 
         private void cmbPenerbit_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DataPenerbit selected = (DataPenerbit)(sender as ComboBox).SelectedItem;
-            this.id_penerbit = selected.id_penerbit;
+            id_penerbit = selected.Id_penerbit;
         }
 
         private void btnTambah_Click(object sender, RoutedEventArgs e)
@@ -66,31 +66,30 @@ namespace Bukufy_Admin
             buku.judul = txtJudul.Text;
             buku.deskripsi = txtDeskripsi.Text;
             buku.penulis = txtPenulis.Text;
-            buku.id_penerbit = this.id_penerbit;
+            buku.id_penerbit = id_penerbit;
             buku.stok = int.Parse(txtStok.Text);
             buku.harga = int.Parse(txtHarga.Text);
-            buku.gambar = this.fileName;
+            buku.gambar = fileName;
 
             if (buku.insertData(buku))
             {
-                Halaman_Utama window = new Halaman_Utama();
-                Message message = new Message("Data Berhasil Disimpan", "Terimakasih telah menginputkan data", "Tutup");
+                Halaman_Utama window = new();
+                Message message = new("Data Berhasil Disimpan", "Terimakasih telah menginputkan data", "Tutup");
                 window.Show();
                 message.Show();
-                this.Close();
+                Close();
             }
             else
             {
-                Message message = new Message("Data Gagal Disimpan", "Harap menginputkan data kembali", "Tutup");
+                Message message = new("Data Gagal Disimpan", "Harap menginputkan data kembali", "Tutup");
                 message.Show();
             }
         }
 
         private void btnBatal_Click(object sender, RoutedEventArgs e)
         {
-            Halaman_Utama window = new Halaman_Utama();
-            window.Show();
-            this.Close();
+            new Halaman_Utama().Show();
+            Close();
         }
 
         private void btnBrowse_Click(object sender, RoutedEventArgs e)
@@ -100,10 +99,34 @@ namespace Bukufy_Admin
 
             if ((bool)openFile.ShowDialog())
             {
-                this.fileName = System.IO.Path.GetFileName(openFile.FileName);
+                fileName = System.IO.Path.GetFileName(openFile.FileName);
             }
 
-            txtGambar.Text = this.fileName;
+            txtGambar.Text = fileName;
+        }
+
+        private void btnHalProduk_Click(object sender, RoutedEventArgs e)
+        {
+            new Halaman_Utama().Show();
+            Close();
+        }
+
+        private void btnHalTransaksi_Click(object sender, RoutedEventArgs e)
+        {
+            new Halaman_Transaksi().Show();
+            Close();
+        }
+
+        private void btnHalEkspedisi_Click(object sender, RoutedEventArgs e)
+        {
+            new Halaman_Ekspedisi().Show();
+            Close();
+        }
+
+        private void btnHalPenerbit_Click(object sender, RoutedEventArgs e)
+        {
+            new Halaman_Penerbit().Show();
+            Close();
         }
 
         private void uploadFile()
@@ -114,31 +137,18 @@ namespace Bukufy_Admin
             directoryInfo = System.IO.Directory.GetParent(directoryInfo.FullName);
             directoryInfo = System.IO.Directory.GetParent(directoryInfo.FullName);
 
-            this.targetDir = directoryInfo.FullName + "\\assets\\sampul\\";
+            targetDir = directoryInfo.FullName + "\\assets\\sampul\\";
 
-            if (!System.IO.Directory.Exists(this.targetDir))
+            if (!System.IO.Directory.Exists(targetDir))
             {
-                System.IO.Directory.CreateDirectory(this.targetDir);
+                System.IO.Directory.CreateDirectory(targetDir);
             }
 
-            if (!System.IO.File.Exists(this.targetDir + this.fileName))
-            {
-                System.IO.File.Copy(openFile.FileName, this.targetDir + this.fileName);
-            }
-            else
-            {
-                DateTime time = new DateTime();
-                time = DateTime.Now;
-                string[] temp = this.fileName.Split('.');
-                this.fileName = temp[0] + time.Hour + time.Minute + time.Second + "." + temp[1];
-                System.IO.File.Copy(openFile.FileName, this.targetDir + this.fileName);
-            }
+            DateTime time = new();
+            time = DateTime.Now;
+            string[] temp = fileName.Split('.');
+            fileName = temp[0] + "_" + time.Hour + time.Minute + time.Second + "." + temp[1];
+            System.IO.File.Copy(openFile.FileName, targetDir + fileName);
         }
-    }
-
-    public class DataPenerbit
-    {
-        public int id_penerbit { get; set; }
-        public string nama { get; set; }
     }
 }
